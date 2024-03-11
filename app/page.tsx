@@ -21,8 +21,8 @@ export default function Home() {
           A simple Authentication Service
         </p>
 
-        <Button>
-          
+        <Button variant="secondary" className="w-full">
+          Sing in
           </Button>
 
 
