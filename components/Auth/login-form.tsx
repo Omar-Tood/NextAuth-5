@@ -1,7 +1,9 @@
 export const LoginForm = () =>{
     return(
-        <div>
-            LoginForm
-        </div>
+        <CardWrapper>
+             LoginForm
+        </CardWrapper>
+           
+       
     )
 }
