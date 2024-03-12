@@ -6,6 +6,7 @@ import {
     CardFooter,
     CardHeader
  } from "../ui/card";
+import { Header } from "./header";
 
 interface CardWrapperPros {
     children: React.ReactNode,
@@ -24,7 +25,13 @@ export const CardWrapper = ({
 }:CardWrapperPros) => {
    return (
       <Card className="w-[400px] show-md">
-      {children}
+        <CardHeader>
+            <Header label={headerLabel}/>
+        </CardHeader>
+        <CardContent>
+        {children}
+        </CardContent>
+  
       </Card>
    );
 };
