@@ -14,6 +14,13 @@ export const LoginButton =({
     const onclick = () =>{
         console.log("Login Button Clicked");
     }
+    if(mode === "model"){
+        return(
+            <span>
+                TODO: Implement Model
+            </span>
+        )
+    }
    return (
      <span onClick={onclick} className="cursor-pointer">
         {children}
