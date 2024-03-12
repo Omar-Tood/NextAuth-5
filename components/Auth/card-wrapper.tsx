@@ -1,6 +1,11 @@
 'use client'
 
-import { Card } from "../ui/card";
+import { 
+    Card,
+    CardContent,
+    CardFooter,
+    CardHeader
+ } from "../ui/card";
 
 interface CardWrapperPros {
     children: React.ReactNode,
@@ -18,8 +23,10 @@ export const CardWrapper = ({
     showSocial
 }:CardWrapperPros) => {
    return (
-      <Card></Card>
-   )
-}
+      <Card className="w-[400px] show-md">
+      {children}
+      </Card>
+   );
+};
 
     
