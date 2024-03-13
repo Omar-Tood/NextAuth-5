@@ -31,6 +31,12 @@ export const CardWrapper = ({
         <CardContent>
         {children}
         </CardContent>
+
+        {showSocial && (
+            <CardFooter>
+                <Social/>
+            </CardFooter>
+        )}
   
       </Card>
    );
