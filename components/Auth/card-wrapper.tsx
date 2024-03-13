@@ -7,6 +7,7 @@ import {
     CardHeader
  } from "../ui/card";
 import { Header } from "./header";
+import { Social } from "./social";
 
 interface CardWrapperPros {
     children: React.ReactNode,
