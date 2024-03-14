@@ -51,6 +51,7 @@ export const LoginForm = () =>{
                                 type="email"
                                 />
                             </FormControl>
+                            <FormMessage/>
                         </FormItem>
                     )}
                     />
