@@ -30,6 +30,17 @@ export const LoginForm = () =>{
         showSocial
         
         >
+         
+         <Form {...form}>
+            <form onSubmit={form.handleSubmit(()=>{})}
+            className="space-y-6"
+            >
+
+            </form>
+
+            
+         </Form>
+     
              LoginForm
         </CardWrapper>
            
