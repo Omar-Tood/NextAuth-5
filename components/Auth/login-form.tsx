@@ -45,7 +45,11 @@ export const LoginForm = () =>{
                         <FormItem>
                             <FormLabel>Email</FormLabel>
                             <FormControl>
-                                <Input/>
+                                <Input
+                                {...field}
+                                placeholder="Omar-Tood@example.com"
+                                type="email"
+                                />
                             </FormControl>
                         </FormItem>
                     )}
