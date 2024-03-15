@@ -5,6 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { CardWrapper } from "./card-wrapper";
 import { LoginSchema } from "@/schemas";
 import { Input } from "../ui/input";
+import { useTransition } from "react";
 import {
   Form,
   FormControl,
@@ -20,6 +21,7 @@ import { login } from "@/actions/login";
 
 
 export const LoginForm = () => {
+  const [isPending, startTransition] = useTransition()
   const form = useForm<z.infer<typeof LoginSchema>>({
     resolver: zodResolver(LoginSchema),
     defaultValues: {
@@ -29,7 +31,11 @@ export const LoginForm = () => {
   });
 
   const onSubmit = (values: z.infer<typeof LoginSchema>) => {
-    login(valus)
+     
+    startTransition(()=>{
+        login(values)
+    });
+    
   };
 
   return (
