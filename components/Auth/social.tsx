@@ -1,7 +1,7 @@
 'use client'
 import { FcGoogle } from "react-icons/fc";
 import {FaGithub} from "react-icons/fa";
-import {FaFacebook,FaMicrosoft} from "react-icons/fa"
+import {FaFacebook,FaDiscord} from "react-icons/fa"
 import { Button } from "../ui/button";
 export const Social = ()=>{
     return(
@@ -40,7 +40,7 @@ export const Social = ()=>{
            variant="outline"
            onClick={()=> {}}
           >
-            <FaMicrosoft className="h-5 w-5" />
+            <FaDiscord className="h-5 w-5" />
            
            
           </Button>
