@@ -33,6 +33,8 @@ export const LoginForm = () => {
   });
 
   const onSubmit = (values: z.infer<typeof LoginSchema>) => {
+    setError("")
+    setSuccess("")
      
     startTransition(()=>{
         login(values)
@@ -91,8 +93,8 @@ export const LoginForm = () => {
               )}
             />
           </div>
-          <FormError message="" />
-          <FormSuccess message="" />
+          <FormError message={error} />
+          <FormSuccess message={success} />
 
           <Button 
           disabled={isPending}
