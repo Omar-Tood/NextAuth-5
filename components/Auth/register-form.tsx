@@ -3,7 +3,7 @@ import * as z from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { CardWrapper } from "./card-wrapper";
-import { LoginSchema } from "@/schemas";
+import { RegisterScheme } from "@/schemas";
 import { Input } from "../ui/input";
 import { useState, useTransition } from "react";
 import {
@@ -20,19 +20,20 @@ import { FormSuccess } from "../form-success";
 import { login } from "@/actions/login";
 
 
-export const Register = () => {
+export const RegisterForm = () => {
   const [error, setError] = useState<string | undefined>()
   const [success, setSuccess] = useState<string | undefined>()     
   const [isPending, startTransition] = useTransition()
-  const form = useForm<z.infer<typeof LoginSchema>>({
-    resolver: zodResolver(LoginSchema),
+  const form = useForm<z.infer<typeof RegisterScheme>>({
+    resolver: zodResolver(RegisterScheme),
     defaultValues: {
       email: "",
       password: "",
+      name: ""
     },
   });
 
-  const onSubmit = (values: z.infer<typeof LoginSchema>) => {
+  const onSubmit = (values: z.infer<typeof RegisterScheme>) => {
     setError("")
     setSuccess("")
      
@@ -48,9 +49,9 @@ export const Register = () => {
 
   return (
     <CardWrapper
-      headerLabel="Welcome Back✋🏾"
-      backButtonLabel="Don`t have an account?"
-      backButtonHref="/auth/register"
+      headerLabel="Create An Account✋🏾"
+      backButtonLabel="Already have an account?"
+      backButtonHref="/auth/login"
       showSocial
     >
       <Form {...form}>
@@ -68,6 +69,19 @@ export const Register = () => {
                       disabled={isPending}
                       placeholder="Omar-Tood@example.com"
                       type="email"
+                    />
+            <FormField
+              control={form.control}
+              name="name"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>name</FormLabel>
+                  <FormControl>
+                    <Input
+                      {...field}
+                      disabled={isPending}
+                      placeholder="Omar-Tood"
+                     
                     />
                   </FormControl>
                   <FormMessage />
