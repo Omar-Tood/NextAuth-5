@@ -70,6 +70,19 @@ export const RegisterForm = () => {
                       placeholder="Omar-Tood@example.com"
                       type="email"
                     />
+            <FormField
+              control={form.control}
+              name="name"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Name</FormLabel>
+                  <FormControl>
+                    <Input
+                      {...field}
+                      disabled={isPending}
+                      placeholder="Omar-Tood"
+                    
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
