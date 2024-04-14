@@ -59,6 +59,24 @@ export const RegisterForm = () => {
           <div className="space-y-4">
             <FormField
               control={form.control}
+              name="name"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Name</FormLabel>
+                  <FormControl>
+                    <Input
+                      {...field}
+                      disabled={isPending}
+                      placeholder="Omar-Tood"
+                    
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
               name="email"
               render={({ field }) => (
                 <FormItem>
@@ -68,25 +86,7 @@ export const RegisterForm = () => {
                       {...field}
                       disabled={isPending}
                       placeholder="Omar-Tood@example.com"
-                      type="email"
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="name"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>name</FormLabel>
-                  <FormControl>
-                    <Input
-                      {...field}
-                      disabled={isPending}
-                      placeholder="Omar-Tood"
-                     
+                     type="email"
                     />
                   </FormControl>
                   <FormMessage />
@@ -122,7 +122,7 @@ export const RegisterForm = () => {
           
           >
            
-            Login
+            Create credential
           </Button>
         </form>
       </Form>
