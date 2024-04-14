@@ -5,6 +5,9 @@ datasource db {
   directUrl = env("DATABASE_URL_UNPOOLED")
 }
 
+generator client{
+  provider = "prisma-client-js"
+}
 
 model User{
   id String @id @default(cuid()) 
