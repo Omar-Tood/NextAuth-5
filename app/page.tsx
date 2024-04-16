@@ -9,7 +9,10 @@ const font = Poppins({
 });
 export default function Home() {
   return (
-    <main className="flex h-full flex-col items-center justify-center bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-sky-400 to-blue-800">
+    <main className="flex h-full flex-col items-center justify-center bg-no-repeat bg-center bg-cover" style={{ backgroundImage: `url('https://images.pexels.com/photos/7599735/pexels-photo-7599735.jpeg?auto=compress&cs=tinysrgb&w=600')`,
+    width:"100%",
+    height:"100%"}}>
+      
       <div className="space-y-6 text-center">
         <h1
           className={cn(
