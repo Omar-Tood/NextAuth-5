@@ -5,6 +5,7 @@ import { db } from "@/lib/db";
 import { RegisterScheme } from "@/schemas";
 import { error } from "console";
 export const register = async(values: z.infer<typeof RegisterScheme>)=>{
+
     // console.log(values)
     const validateFields = RegisterScheme.safeParse(values);
     if(!validateFields.success){
@@ -12,6 +13,8 @@ export const register = async(values: z.infer<typeof RegisterScheme>)=>{
     };
 
     const {email, password, name} = validateFields.data;
+
+
     const hashedPassword = await bcrypt.hash(password, 10);
     
     const existingUser = await db.user.findUnique({
